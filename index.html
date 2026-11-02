@@ -3,229 +3,275 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cristian González · Strategic Ally to the CEO · Multiply Advisors</title>
+<title>Cristian González · Right hand to the CEO · Multiply Advisors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  /* Palette is an approximation of Multiply Advisors' look (navy + warm gold). Edit the variables to match exact brand codes. */
   :root{
-    --navy:#0B2545; --navy2:#13315C; --ink:#10233f; --gold:#E0A526; --gold2:#F4D58D;
-    --sky:#8DA9C4; --paper:#F7F5F0; --white:#fff; --muted:#5b6b82;
+    --p900:#2A1065; --p800:#3B1A8C; --p700:#4C1FB3; --p600:#6D3AE0; --p500:#8B5CF6; --p300:#C4B5FD; --p200:#DDD3FE; --p100:#EFEAFE; --p50:#F8F6FF;
+    --ink:#1E1536; --muted:#5E5679; --white:#fff;
+    --glass:rgba(255,255,255,.58); --glass-b:rgba(255,255,255,.75);
+    --ease:cubic-bezier(.22,1,.36,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper);line-height:1.6}
-  h1,h2,h3,.sans,nav,.tag,.btn{font-family:'Helvetica Neue',Arial,sans-serif}
+  body{font-family:'Figtree','Helvetica Neue',Arial,sans-serif;color:var(--ink);line-height:1.6;background:var(--p50);overflow-x:hidden;-webkit-font-smoothing:antialiased}
   a{color:inherit}
-  nav{position:sticky;top:0;z-index:10;background:rgba(11,37,69,.96);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;font-size:14px}
-  nav b{letter-spacing:.5px}
-  nav b span{color:var(--gold)}
-  nav div a{margin-left:20px;text-decoration:none;opacity:.85}
-  nav div a:hover{opacity:1;color:var(--gold2)}
-  section{padding:84px 5vw;max-width:1180px;margin:auto}
-  .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;max-width:none;padding:96px 5vw 80px}
-  .hero-in{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-  .tag{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:5px 12px;border-radius:99px;margin-bottom:22px}
-  h1{font-size:clamp(34px,5vw,56px);line-height:1.08;margin-bottom:20px}
-  h1 em{color:var(--gold);font-style:normal}
-  .hero p{font-size:19px;color:#d6e0ee;max-width:560px}
-  .btn{display:inline-block;margin-top:28px;background:var(--gold);color:var(--navy);padding:13px 26px;border-radius:6px;text-decoration:none;font-weight:700}
-  h2{font-size:clamp(26px,3.4vw,38px);color:var(--navy);margin-bottom:10px}
-  .lead{color:var(--muted);max-width:720px;margin-bottom:40px;font-size:18px}
-  .kicker{font-family:Arial,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+  /* ambient background */
+  .bg{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#F3EEFF 0%,#FFFFFF 45%,#F1EBFF 100%)}
+  .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;will-change:transform}
+  .o1{width:520px;height:520px;background:#B79BFF;top:-120px;left:-120px}
+  .o2{width:460px;height:460px;background:#E4D9FF;top:35%;right:-140px}
+  .o3{width:420px;height:420px;background:#A78BFA;bottom:-120px;left:25%;opacity:.35}
+  .progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--p500),var(--p300));z-index:30}
+  nav{position:sticky;top:12px;z-index:20;margin:12px auto 0;width:min(1120px,92vw);display:flex;justify-content:space-between;align-items:center;padding:12px 22px;border-radius:99px;background:var(--glass);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid var(--glass-b);box-shadow:0 8px 32px rgba(76,31,179,.10);font-size:14px;font-weight:600}
+  nav b{color:var(--p800);letter-spacing:.2px} nav b span{color:var(--p500)}
+  nav div a{margin-left:22px;text-decoration:none;color:var(--muted);transition:color .3s}
+  nav div a:hover{color:var(--p600)}
+  section{width:min(1120px,92vw);margin:auto;padding:110px 0 30px}
+  .kicker{font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--p600);font-weight:800;margin-bottom:12px}
+  h1{font-size:clamp(38px,5.6vw,66px);line-height:1.04;letter-spacing:-1.5px;color:var(--p900);font-weight:900}
+  h1 em{font-style:normal;background:linear-gradient(90deg,var(--p600),var(--p500),#B79BFF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h2{font-size:clamp(28px,3.6vw,44px);line-height:1.1;letter-spacing:-.8px;color:var(--p900);font-weight:800;margin-bottom:14px}
+  h3{font-size:18px;color:var(--p800);font-weight:700;margin-bottom:6px}
+  .lead{color:var(--muted);font-size:19px;max-width:700px;margin-bottom:44px}
+  .glass{background:var(--glass);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);border:1px solid var(--glass-b);border-radius:24px;box-shadow:0 10px 40px rgba(76,31,179,.09), inset 0 1px 0 rgba(255,255,255,.9)}
+  .card{padding:28px;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(109,58,224,.18), inset 0 1px 0 #fff}
+  .card p{font-size:15.5px;color:#4a4163}
   .grid{display:grid;gap:20px}
-  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
-  .card{background:var(--white);border-radius:12px;padding:26px;box-shadow:0 2px 14px rgba(11,37,69,.08);border-top:4px solid var(--gold)}
-  .card h3{color:var(--navy);font-size:18px;margin-bottom:8px}
-  .card p{font-size:15.5px;color:#3b4b63}
-  .num{font-family:Arial,sans-serif;font-size:40px;font-weight:800;color:var(--navy)}
-  .num small{font-size:20px;color:var(--gold)}
-  .stat{background:var(--navy);color:#fff;border-radius:12px;padding:24px;text-align:center}
-  .stat .num{color:var(--gold)} .stat p{font-size:14px;color:#cdd9e8;font-family:Arial,sans-serif}
-  .dark{background:var(--navy);color:#fff;max-width:none}
-  .dark-in{max-width:1180px;margin:auto}
-  .dark h2{color:#fff} .dark .lead{color:#bccbe0}
-  .map-wrap{background:var(--white);border-radius:16px;padding:20px;box-shadow:0 4px 24px rgba(11,37,69,.12)}
-  .map-wrap svg{width:100%;height:auto;display:block}
-  .timeline{border-left:3px solid var(--gold);padding-left:26px}
-  .timeline .it{margin-bottom:28px;position:relative}
-  .timeline .it:before{content:"";position:absolute;left:-35px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--navy);border:3px solid var(--gold)}
-  .timeline h3{font-size:18px;color:#fff} .timeline .yr{font-family:Arial;font-size:13px;color:var(--gold);font-weight:700;letter-spacing:1px}
-  .days{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .day{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:24px}
-  .day h3{color:var(--gold2);margin-bottom:10px}
-  .day li{margin-left:18px;font-size:15.5px;color:#dbe5f2;margin-bottom:6px}
-  .why{background:var(--gold2);border-radius:16px;padding:44px;color:var(--navy)}
-  .why h2{margin-bottom:14px} .why p{font-size:19px;max-width:860px}
-  footer{background:#071832;color:#9fb3cf;text-align:center;padding:36px 5vw;font-family:Arial,sans-serif;font-size:14px}
-  footer b{color:var(--gold)}
-  @media(max-width:860px){.hero-in,.g3,.g4,.g2,.days{grid-template-columns:1fr} nav div{display:none} section{padding:60px 6vw}}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  .btn{display:inline-block;margin-top:30px;padding:15px 30px;border-radius:99px;text-decoration:none;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--p600),var(--p500));box-shadow:0 12px 30px rgba(109,58,224,.35);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(109,58,224,.45)}
+  .tag{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:var(--p700);padding:7px 16px;border-radius:99px;margin-bottom:24px;background:var(--glass);border:1px solid var(--p200)}
+
+  /* hero */
+  .hero{padding-top:70px}
+  .hero-in{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .hero p.sub{font-size:20px;color:var(--muted);max-width:560px;margin-top:22px}
+  .photo-wrap{position:relative;justify-self:center;width:min(380px,80vw)}
+  .photo-wrap:before{content:"";position:absolute;inset:-18px;border-radius:220px 220px 40px 40px;background:linear-gradient(160deg,rgba(139,92,246,.55),rgba(255,255,255,.2));filter:blur(2px);transform:rotate(3deg)}
+  .photo{position:relative;border-radius:200px 200px 32px 32px;overflow:hidden;border:6px solid rgba(255,255,255,.85);box-shadow:0 30px 80px rgba(76,31,179,.3);aspect-ratio:3/4}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+  .chip{position:absolute;padding:10px 16px;border-radius:99px;font-size:13px;font-weight:700;color:var(--p800);animation:float 6s ease-in-out infinite}
+  .chip.a{left:-34px;top:18%}.chip.b{right:-30px;top:48%;animation-delay:-2s}.chip.c{left:-14px;bottom:8%;animation-delay:-4s}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+  /* reveal */
+  .js .rv{opacity:0;transform:translateY(34px) scale(.985);filter:blur(10px);transition:opacity 1s var(--ease),transform 1.1s var(--ease),filter 1s var(--ease);transition-delay:var(--d,0s)}
+  .js .rv.in{opacity:1;transform:none;filter:none}
+
+  /* map */
+  .map{padding:26px}
+  .map svg{width:100%;height:auto;display:block}
+  .draw{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s var(--ease)}
+  .in .draw,.draw.in{stroke-dashoffset:0}
+
+  /* stats */
+  .stat{padding:26px;text-align:center}
+  .num{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,var(--p700),var(--p500));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat p{font-size:14px;color:var(--muted);font-weight:500}
+
+  /* timeline */
+  .timeline{padding:30px 30px 6px 40px;position:relative}
+  .timeline:before{content:"";position:absolute;left:22px;top:34px;bottom:34px;width:2px;background:linear-gradient(var(--p500),var(--p200))}
+  .it{position:relative;margin-bottom:24px}
+  .it:before{content:"";position:absolute;left:-26px;top:8px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--p500)}
+  .yr{font-size:12px;font-weight:800;letter-spacing:1.5px;color:var(--p600)}
+  .it p{font-size:15px;color:#4a4163}
+
+  /* risks */
+  .risk{padding:28px;display:grid;gap:12px}
+  .risk .q{display:flex;gap:12px;align-items:flex-start;font-weight:700;color:var(--p900);font-size:17.5px;line-height:1.35}
+  .risk .q i{flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--p600),var(--p500));color:#fff;font-style:normal;display:grid;place-items:center;font-size:13px;font-weight:800}
+  .whisper{font-size:14.5px;color:var(--muted);font-style:italic;border-left:3px solid var(--p300);padding-left:12px}
+  .risk .ans{font-size:15.5px;color:#3d3556}
+  .risk .ans b{color:var(--p700)}
+  .verify{font-size:13.5px;font-weight:700;color:var(--p700);background:var(--p100);border-radius:12px;padding:9px 13px}
+
+  /* autonomy ladder */
+  .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .step{padding:28px;position:relative;overflow:hidden}
+  .step:after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(var(--p300),transparent 70%);opacity:.7}
+  .step .lv{font-size:12px;font-weight:800;letter-spacing:1.6px;color:var(--p600)}
+  .step ul{margin:10px 0 0 18px;font-size:15px;color:#4a4163}
+  .step li{margin-bottom:5px}
+
+  .why{padding:54px;text-align:center;background:linear-gradient(135deg,rgba(109,58,224,.92),rgba(139,92,246,.82));color:#fff;border:1px solid rgba(255,255,255,.4)}
+  .why h2{color:#fff}.why p{font-size:19px;max-width:760px;margin:auto;color:#EFE9FF}
+  .why .btn{background:#fff;color:var(--p700);box-shadow:0 12px 30px rgba(0,0,0,.2)}
+  footer{width:min(1120px,92vw);margin:70px auto 40px;text-align:center;color:var(--muted);font-size:14px}
+  footer b{color:var(--p800)}
+
+  @media(max-width:860px){.hero-in,.g2,.g3,.g4,.ladder{grid-template-columns:1fr} nav div{display:none} section{padding-top:80px} .chip{display:none} .why{padding:34px 22px}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none;filter:none}.draw{stroke-dashoffset:0}}
 </style>
 </head>
 <body>
+<script>document.documentElement.classList.add('js')</script>
+<div class="progress" id="bar"></div>
+<div class="bg"><div class="orb o1" data-s=".08"></div><div class="orb o2" data-s="-.06"></div><div class="orb o3" data-s=".05"></div></div>
 
 <nav>
   <b>CRISTIAN GONZÁLEZ <span>×</span> MULTIPLY ADVISORS</b>
-  <div><a href="#ally">Ally</a><a href="#map">Map</a><a href="#skills">Skills</a><a href="#proof">Proof</a><a href="#plan">First 90 days</a></div>
+  <div><a href="#ally">Position</a><a href="#map">How I work</a><a href="#proof">Proof</a><a href="#risks">The hard questions</a><a href="#plan">90 days</a></div>
 </nav>
 
-<header class="hero">
+<section class="hero">
   <div class="hero-in">
     <div>
-      <span class="tag">Executive Assistant to the CEO · Proposal</span>
-      <h1>Not an assistant who follows tasks. An <em>ally</em> who multiplies your time.</h1>
-      <p>I run operations at scale: 450+ people, a P&amp;L and C-level cadences with a US client. I would bring that strategic lens to Josh's desk: nothing dropped, every decision arriving with a recommendation.</p>
-      <a class="btn" href="#map">See how I'd work with Josh →</a>
+      <span class="tag rv">Executive Assistant to the CEO</span>
+      <h1 class="rv" style="--d:.08s">A right hand that <em>thinks ahead</em>, and earns trust one closed loop at a time.</h1>
+      <p class="sub rv" style="--d:.18s">I have run operations at scale: 450+ people, a P&amp;L and C-level reviews with a US client. For Josh, that means a partner who prepares, anticipates and follows through, and who always leaves the decision with him.</p>
+      <a class="btn rv" style="--d:.28s" href="#risks">Start with the hard questions →</a>
     </div>
-    <!-- Hero visual: the ally "orbit" -->
-    <svg viewBox="0 0 420 420" role="img" aria-label="Cristian at the center connecting the CEO with every area of the firm">
-      <defs><radialGradient id="g"><stop offset="0" stop-color="#E0A526" stop-opacity=".35"/><stop offset="1" stop-color="#E0A526" stop-opacity="0"/></radialGradient></defs>
-      <circle cx="210" cy="210" r="200" fill="url(#g)"/>
-      <circle cx="210" cy="210" r="150" fill="none" stroke="#8DA9C4" stroke-opacity=".5" stroke-dasharray="4 6"/>
-      <circle cx="210" cy="210" r="90" fill="none" stroke="#E0A526" stroke-opacity=".6"/>
-      <g stroke="#E0A526" stroke-width="2" stroke-opacity=".7">
-        <line x1="210" y1="210" x2="210" y2="60"/><line x1="210" y1="210" x2="340" y2="135"/>
-        <line x1="210" y1="210" x2="340" y2="285"/><line x1="210" y1="210" x2="210" y2="360"/>
-        <line x1="210" y1="210" x2="80" y2="285"/><line x1="210" y1="210" x2="80" y2="135"/>
-      </g>
-      <circle cx="210" cy="210" r="48" fill="#E0A526"/>
-      <text x="210" y="206" text-anchor="middle" font-family="Arial" font-weight="800" font-size="15" fill="#0B2545">CRISTIAN</text>
-      <text x="210" y="224" text-anchor="middle" font-family="Arial" font-size="11" fill="#0B2545">strategic ally</text>
-      <g font-family="Arial" font-size="12" font-weight="700" fill="#0B2545" text-anchor="middle">
-        <g><circle cx="210" cy="60" r="34" fill="#fff"/><text x="210" y="57">CEO</text><text x="210" y="71" font-weight="400" font-size="10">Josh</text></g>
-        <g><circle cx="340" cy="135" r="34" fill="#F4D58D"/><text x="340" y="132">Tax</text><text x="340" y="146" font-weight="400" font-size="10">team</text></g>
-        <g><circle cx="340" cy="285" r="34" fill="#F4D58D"/><text x="340" y="282">Accounting</text><text x="340" y="296" font-weight="400" font-size="10">team</text></g>
-        <g><circle cx="210" cy="360" r="34" fill="#F4D58D"/><text x="210" y="357">Clients</text><text x="210" y="371" font-weight="400" font-size="10">success</text></g>
-        <g><circle cx="80" cy="285" r="34" fill="#F4D58D"/><text x="80" y="282">People</text><text x="80" y="296" font-weight="400" font-size="10">Ops</text></g>
-        <g><circle cx="80" cy="135" r="34" fill="#F4D58D"/><text x="80" y="132">Projects</text><text x="80" y="146" font-weight="400" font-size="10">&amp; SOPs</text></g>
+    <div class="photo-wrap rv" style="--d:.15s">
+      <div class="photo"><img src="headshot.jpg" alt="Portrait of Cristian González" width="463" height="800"></div>
+      <div class="chip glass a">Strategic ally</div>
+      <div class="chip glass b">Closes every loop</div>
+      <div class="chip glass c">Josh decides</div>
+    </div>
+  </div>
+</section>
+
+<section id="ally">
+  <div class="kicker rv">Chapter 1 · My position</div>
+  <h2 class="rv">From "handled" to "decided and moving"</h2>
+  <p class="lead rv">A great assistant protects the calendar. An ally also protects the CEO's attention, his decisions and the company's momentum, without ever taking the decision from him.</p>
+  <div class="grid g3">
+    <div class="glass card rv"><h3>Strategic point of view</h3><p>I read each request in context: what it moves, what it risks, what Josh must decide. I bring options with a recommendation, not open questions.</p></div>
+    <div class="glass card rv" style="--d:.1s"><h3>Owner mindset</h3><p>Anything raised has an owner, a due date and a follow-up. I flag blockers before they cost time.</p></div>
+    <div class="glass card rv" style="--d:.2s"><h3>Bridge between areas</h3><p>I translate between Josh and the tax, accounting and client teams so priorities travel clearly in both directions.</p></div>
+  </div>
+</section>
+
+<section id="map">
+  <div class="kicker rv">Chapter 2 · How I work</div>
+  <h2 class="rv">One desk, eight responsibilities, one outcome</h2>
+  <p class="lead rv">Everything points to a single result: Josh spends his time on growth and clients, and the rest is prepared, tracked and closed.</p>
+  <div class="glass map rv">
+    <svg viewBox="0 0 1000 470" role="img" aria-label="Inputs flow through Cristian into eight outputs: ally to the CEO, strategic view, project status, SOPs, cross-area communication, accountability, contingency management, process definition">
+      <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6D3AE0"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+      <g font-family="Figtree,Arial,sans-serif" text-anchor="middle">
+        <text x="130" y="36" font-size="13" font-weight="800" fill="#6D3AE0" letter-spacing="2">WHAT COMES IN</text>
+        <g fill="#fff" fill-opacity=".8" stroke="#C4B5FD">
+          <rect x="30" y="56" width="200" height="56" rx="16"/><rect x="30" y="132" width="200" height="56" rx="16"/><rect x="30" y="208" width="200" height="56" rx="16"/><rect x="30" y="284" width="200" height="56" rx="16"/><rect x="30" y="360" width="200" height="56" rx="16"/>
+        </g>
+        <g font-size="14" fill="#2A1065" font-weight="700">
+          <text x="130" y="90">Calendar &amp; meetings</text><text x="130" y="166">Inbox &amp; requests</text><text x="130" y="242">Team blockers</text><text x="130" y="318">Unexpected issues</text><text x="130" y="394">Open projects</text>
+        </g>
+        <g stroke="#A78BFA" stroke-width="3" fill="none" stroke-linecap="round">
+          <path class="draw" pathLength="1" d="M235 84 L330 215"/><path class="draw" pathLength="1" d="M235 160 L330 225"/><path class="draw" pathLength="1" d="M235 236 L330 235"/><path class="draw" pathLength="1" d="M235 312 L330 245"/><path class="draw" pathLength="1" d="M235 388 L330 255"/>
+          <path class="draw" pathLength="1" d="M560 190 L640 90"/><path class="draw" pathLength="1" d="M565 215 L640 175"/><path class="draw" pathLength="1" d="M565 245 L640 260"/><path class="draw" pathLength="1" d="M560 275 L640 345"/>
+        </g>
+        <circle cx="440" cy="235" r="105" fill="url(#pg)"/>
+        <circle cx="440" cy="235" r="120" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-dasharray="5 7"/>
+        <text x="440" y="214" font-size="12" fill="#E4D9FF" letter-spacing="2">THE ALLY</text>
+        <text x="440" y="246" font-size="26" font-weight="800" fill="#fff">Cristian</text>
+        <text x="440" y="268" font-size="12" fill="#EFE9FF">prioritize · recommend · follow up</text>
+        <text x="810" y="36" font-size="13" font-weight="800" fill="#6D3AE0" letter-spacing="2">WHAT COMES OUT</text>
+        <g fill="#2A1065">
+          <rect x="640" y="56" width="165" height="52" rx="16"/><rect x="815" y="56" width="165" height="52" rx="16"/><rect x="640" y="140" width="165" height="52" rx="16"/><rect x="815" y="140" width="165" height="52" rx="16"/>
+          <rect x="640" y="224" width="165" height="52" rx="16"/><rect x="815" y="224" width="165" height="52" rx="16"/><rect x="640" y="308" width="165" height="52" rx="16"/><rect x="815" y="308" width="165" height="52" rx="16"/>
+        </g>
+        <g font-size="13" font-weight="700" fill="#fff">
+          <text x="722" y="87">Ally to the CEO</text><text x="897" y="87">Strategic view</text><text x="722" y="171">Project status</text><text x="897" y="171">Written SOPs</text>
+          <text x="722" y="255">Cross-area comms</text><text x="897" y="255">Accountability</text><text x="722" y="339">Contingency mgmt</text><text x="897" y="339">Process definition</text>
+        </g>
+        <rect x="640" y="384" width="340" height="52" rx="26" fill="url(#pg)"/>
+        <text x="810" y="416" font-size="15" font-weight="800" fill="#fff">Josh's time goes to growth and clients</text>
       </g>
     </svg>
   </div>
-</header>
-
-<section id="ally">
-  <div class="kicker">My position</div>
-  <h2>The gap I fill: from "handled" to "decided and moving"</h2>
-  <p class="lead">An excellent assistant protects the calendar. A strategic ally also protects the CEO's attention, his decisions and the company's momentum. That is the difference I want to show you.</p>
-  <div class="grid g3">
-    <div class="card"><h3>Strategic point of view</h3><p>I read each request in context: what it moves, what it risks and what Josh needs to decide. I bring options with a recommendation, not open questions.</p></div>
-    <div class="card"><h3>Owner mindset</h3><p>If something is raised, it has an owner, a due date and a follow-up. I close loops without being chased and I flag blockers before they cost time.</p></div>
-    <div class="card"><h3>Bridge between areas</h3><p>I translate between the CEO and the tax, accounting and client teams, so priorities travel clearly in both directions.</p></div>
+  <div class="grid g4" style="margin-top:24px">
+    <div class="glass card rv"><h3>Ally &amp; trust</h3><p>Discretion and candor. I have run C-level relationships and QBRs with a US client.</p></div>
+    <div class="glass card rv" style="--d:.07s"><h3>Project position</h3><p>One-page status: owner, date, risk, next step. Weekly and monthly reviews are routine for me.</p></div>
+    <div class="glass card rv" style="--d:.14s"><h3>SOPs</h3><p>After any new type of task I leave a short SOP. I have built standardization frameworks tested against a control group.</p></div>
+    <div class="glass card rv" style="--d:.21s"><h3>Contingencies</h3><p>Triage, contain, inform Josh with options, document the lesson.</p></div>
   </div>
 </section>
 
-<section class="dark" id="map">
-  <div class="dark-in">
-    <div class="kicker">How I contribute</div>
-    <h2>One desk, eight responsibilities, one outcome</h2>
-    <p class="lead">Everything I do points to a single result: Josh spends his time on growth and clients, and everything else is prepared, tracked and closed.</p>
-    <div class="map-wrap">
-      <svg viewBox="0 0 1000 470" role="img" aria-label="Map of responsibilities: ally, strategy, projects, SOPs, cross-area communication, accountability, contingency management, process definition">
-        <rect width="1000" height="470" fill="#fff"/>
-        <g font-family="Arial,sans-serif" text-anchor="middle">
-          <!-- left: inputs -->
-          <text x="130" y="36" font-size="13" font-weight="700" fill="#E0A526" letter-spacing="2">WHAT COMES IN</text>
-          <g fill="#F7F5F0" stroke="#8DA9C4">
-            <rect x="30" y="56" width="200" height="56" rx="10"/><rect x="30" y="132" width="200" height="56" rx="10"/>
-            <rect x="30" y="208" width="200" height="56" rx="10"/><rect x="30" y="284" width="200" height="56" rx="10"/>
-            <rect x="30" y="360" width="200" height="56" rx="10"/>
-          </g>
-          <g font-size="14" fill="#0B2545" font-weight="700">
-            <text x="130" y="90">Calendar &amp; meetings</text><text x="130" y="166">Inbox &amp; requests</text>
-            <text x="130" y="242">Team blockers</text><text x="130" y="318">New / unexpected issues</text><text x="130" y="394">Open projects</text>
-          </g>
-          <!-- arrows -->
-          <g stroke="#E0A526" stroke-width="3" fill="none"><path d="M235 84 L330 215"/><path d="M235 160 L330 225"/><path d="M235 236 L330 235"/><path d="M235 312 L330 245"/><path d="M235 388 L330 255"/></g>
-          <!-- center -->
-          <circle cx="440" cy="235" r="105" fill="#0B2545"/>
-          <circle cx="440" cy="235" r="118" fill="none" stroke="#E0A526" stroke-width="2" stroke-dasharray="5 6"/>
-          <text x="440" y="218" font-size="12" fill="#F4D58D" letter-spacing="2">THE ALLY</text>
-          <text x="440" y="244" font-size="24" font-weight="800" fill="#fff">Cristian</text>
-          <text x="440" y="266" font-size="12" fill="#bccbe0">prioritize · decide · follow up</text>
-          <!-- arrows out -->
-          <g stroke="#E0A526" stroke-width="3" fill="none"><path d="M560 190 L640 90"/><path d="M565 215 L640 175"/><path d="M565 245 L640 260"/><path d="M560 275 L640 345"/></g>
-          <!-- right: outputs 8 pillars in 2 cols -->
-          <text x="810" y="36" font-size="13" font-weight="700" fill="#E0A526" letter-spacing="2">WHAT COMES OUT</text>
-          <g fill="#0B2545">
-            <rect x="640" y="56" width="165" height="52" rx="10"/><rect x="815" y="56" width="165" height="52" rx="10"/>
-            <rect x="640" y="140" width="165" height="52" rx="10"/><rect x="815" y="140" width="165" height="52" rx="10"/>
-            <rect x="640" y="224" width="165" height="52" rx="10"/><rect x="815" y="224" width="165" height="52" rx="10"/>
-            <rect x="640" y="308" width="165" height="52" rx="10"/><rect x="815" y="308" width="165" height="52" rx="10"/>
-          </g>
-          <g font-size="13" font-weight="700" fill="#fff">
-            <text x="722" y="87">Ally to the CEO</text><text x="897" y="87">Strategic view</text>
-            <text x="722" y="171">Project status</text><text x="897" y="171">Written SOPs</text>
-            <text x="722" y="255">Cross-area comms</text><text x="897" y="255">Accountability</text>
-            <text x="722" y="339">Contingency mgmt</text><text x="897" y="339">Process definition</text>
-          </g>
-          <rect x="640" y="384" width="340" height="52" rx="26" fill="#E0A526"/>
-          <text x="810" y="416" font-size="15" font-weight="800" fill="#0B2545">Josh's time goes to growth and clients</text>
-        </g>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="kicker">Skills</div>
-  <h2>What each responsibility looks like in practice</h2>
-  <p class="lead">Each one is tied to something I already do every day in my current operation.</p>
+<section id="proof">
+  <div class="kicker rv">Chapter 3 · Proof</div>
+  <h2 class="rv">What I have actually done</h2>
+  <p class="lead rv">Figures from my work on a global B2B mobility and technology account. Every number can be verified with references.</p>
   <div class="grid g4">
-    <div class="card"><h3>Ally &amp; trust</h3><p>Discretion, candor and recommendations. I have run C-level relationships and QBRs with a US client.</p></div>
-    <div class="card"><h3>Strategic view</h3><p>I connect daily work to the goal: P&amp;L ownership, revenue targets and capacity planning.</p></div>
-    <div class="card"><h3>Project position</h3><p>One-page status per project: owner, date, risk, next step. Weekly and monthly business reviews are routine for me.</p></div>
-    <div class="card"><h3>SOPs</h3><p>After any new type of task, I leave a short SOP. I have built standardization frameworks, tested with A/B against a control group.</p></div>
-    <div class="card"><h3>Cross-area comms</h3><p>Recaps posted where the team works, action items turned into tasks with owner and due date.</p></div>
-    <div class="card"><h3>Accountability</h3><p>Lean Six Sigma and COPC discipline: measure, follow up, close. I do not leave a loop open.</p></div>
-    <div class="card"><h3>Contingencies</h3><p>When something unexpected lands, I triage, contain, inform Josh with options and document the lesson.</p></div>
-    <div class="card"><h3>Process definition</h3><p>I map the process, find the root cause and redesign it. I have built my own tools for this (root cause, action plans, forecasting).</p></div>
+    <div class="glass stat rv"><div class="num"><span data-n="450">450</span>+</div><p>people led across functions</p></div>
+    <div class="glass stat rv" style="--d:.08s"><div class="num">$<span data-n="3">3</span>M+</div><p>quarterly gross bookings</p></div>
+    <div class="glass stat rv" style="--d:.16s"><div class="num">26→34%</div><p>conversion rate (26% to 34.45%)</p></div>
+    <div class="glass stat rv" style="--d:.24s"><div class="num"><span data-n="12">12</span>/25</div><p>team members promoted</p></div>
+  </div>
+  <div class="grid g2" style="margin-top:20px">
+    <div class="glass timeline rv">
+      <div class="it"><div class="yr">2018 – PRESENT</div><h3>Teleperformance Colombia</h3><p>Agent, Trainer, Supervisor, Operations Assistant Manager, Operations Manager and Senior Account Manager: eight years of growth inside one client relationship.</p></div>
+      <div class="it"><div class="yr">2017 – 2018</div><h3>First Fusion</h3><p>Promoted from distributor to distribution supervisor in 3 months; helped open a new office.</p></div>
+      <div class="it"><div class="yr">2016 – 2017</div><h3>Customer service</h3><p>Direct guest contact; I asked for feedback proactively.</p></div>
+    </div>
+    <div class="glass card rv" style="--d:.1s">
+      <h3>Tools I use today</h3>
+      <p>Google Workspace, Microsoft 365, Salesforce, HubSpot, Power BI, Tableau, SQL, Power Automate, Google Apps Script, DocuSign.</p>
+      <br><h3>Education &amp; credentials</h3>
+      <p>Bachelor's in International Business (UDCA) · Associate degree in Business Administration · Lean Six Sigma Green Belt · COPC · English C1.</p>
+      <br><h3>Honest gap</h3>
+      <p>I have not used Slack, ClickUp, Loom or Missive at work yet. I will be fluent before my first day (see chapter 5).</p>
+    </div>
   </div>
 </section>
 
-<section class="dark" id="proof">
-  <div class="dark-in">
-    <div class="kicker">Proof</div>
-    <h2>Results from my current role</h2>
-    <p class="lead">Verified figures from my work on a global B2B mobility and technology account.</p>
-    <div class="grid g4">
-      <div class="stat"><div class="num">450<small>+</small></div><p>people led across functions</p></div>
-      <div class="stat"><div class="num">$3M<small>+</small></div><p>quarterly gross bookings</p></div>
-      <div class="stat"><div class="num">26→34<small>%</small></div><p>conversion rate (26% to 34.45%)</p></div>
-      <div class="stat"><div class="num">12<small>/25</small></div><p>team members promoted</p></div>
-    </div>
-    <div style="height:48px"></div>
-    <div class="grid g2">
-      <div class="timeline">
-        <div class="it"><div class="yr">2018 – PRESENT</div><h3>Teleperformance Colombia</h3><p style="color:#bccbe0">Agent, Trainer, Supervisor, Operations Assistant Manager, Operations Manager and Senior Account Manager. Eight years growing inside one client relationship.</p></div>
-        <div class="it"><div class="yr">2017 – 2018</div><h3>First Fusion</h3><p style="color:#bccbe0">Promoted from distributor to distribution supervisor in 3 months; helped open a new office.</p></div>
-        <div class="it"><div class="yr">2016 – 2017</div><h3>Customer service</h3><p style="color:#bccbe0">Direct guest contact; I asked for feedback proactively.</p></div>
-      </div>
-      <div class="card" style="color:#10233f">
-        <h3>Tools</h3>
-        <p>Google Workspace, Microsoft 365, Salesforce, HubSpot, Power BI, Tableau, SQL, Power Automate, Google Apps Script, DocuSign. Fast to adopt Slack, ClickUp, Loom and Missive.</p>
-        <br><h3>Education &amp; credentials</h3>
-        <p>Bachelor's in International Business (UDCA) · Associate degree in Business Administration · Lean Six Sigma Green Belt · COPC · English C1.</p>
-      </div>
-    </div>
+<section id="risks">
+  <div class="kicker rv">Chapter 4 · The hard questions</div>
+  <h2 class="rv">"Isn't he overqualified for this seat?"</h2>
+  <p class="lead rv">If someone close to Josh raises a concern about a newcomer with a senior profile in an assistant role, they would be right to. These are the six questions I would ask in their place, and what I would commit to for each.</p>
+  <div class="grid g2">
+    <div class="glass risk card rv"><div class="q"><i>1</i>Will he leave when something bigger appears?</div><div class="whisper">"A director-level profile won't stay in this seat."</div><div class="ans"><b>My answer:</b> I am choosing this role for what it gives me: a seat next to a CEO, learning how a tax and accounting firm runs. I would agree on a 6-month and 12-month check-in with Josh, and a notice commitment in writing.</div><div class="verify">Josh can verify: 8 years at one company, promoted at every stage.</div></div>
+    <div class="glass risk card rv" style="--d:.08s"><div class="q"><i>2</i>Will he try to run things instead of supporting?</div><div class="whisper">"He'll overstep and make decisions that aren't his."</div><div class="ans"><b>My answer:</b> I recommend, Josh decides. In week one I would ask for an explicit map of what I do alone, what I do and report, and what I ask first (see the ladder below).</div><div class="verify">Josh can verify: every decision I bring has options and a recommendation, never a surprise.</div></div>
+    <div class="glass risk card rv"><div class="q"><i>3</i>Are the numbers on his résumé inflated?</div><div class="whisper">"Big claims, but who confirms them?"</div><div class="ans"><b>My answer:</b> Ask me anything. I would offer references, and a paid work-sample week on real tasks (calendar, a meeting recap, an SOP) so Josh sees quality before committing.</div><div class="verify">Josh can verify: references and a trial task, on his terms.</div></div>
+    <div class="glass risk card rv" style="--d:.08s"><div class="q"><i>4</i>Can he do the actual job from day one?</div><div class="whisper">"No assistant title. Doesn't know our tools."</div><div class="ans"><b>My answer:</b> True, I have not held the title and I have not used ClickUp, Slack, Loom or Missive at work. I would complete a tool-readiness sprint before day one and ship my first SOP in week one. My experience is in the work behind it: executive reviews, action items, follow-through.</div><div class="verify">Josh can verify: a live demo of my calendar and recap workflow.</div></div>
+    <div class="glass risk card rv"><div class="q"><i>5</i>Can he be trusted with sensitive client data?</div><div class="whisper">"A new person with access to tax and financial files."</div><div class="ans"><b>My answer:</b> Least-privilege access that grows with trust, a signed confidentiality agreement, and no data outside company tools. I have handled regulated data privacy requirements (HIPAA) in my current work.</div><div class="verify">Josh can verify: access is granted and reviewed by him, step by step.</div></div>
+    <div class="glass risk card rv" style="--d:.08s"><div class="q"><i>6</i>Will he create friction with the team around Josh?</div><div class="whisper">"A newcomer with a strong profile can become a rival."</div><div class="ans"><b>My answer:</b> I would meet each person in Josh's circle in the first two weeks, ask how they want to work with me, and share credit. No side channels: nothing reaches Josh about the team that the team would not hear from me first.</div><div class="verify">Josh can verify: ask his circle at day 30 and day 90.</div></div>
+  </div>
+
+  <h2 class="rv" style="margin-top:80px">Trust is earned in steps, so autonomy grows in steps</h2>
+  <p class="lead rv">Josh stays in control at every stage. This is the ladder I would propose.</p>
+  <div class="ladder">
+    <div class="glass step rv"><div class="lv">LEVEL 1 · DO</div><h3>Without asking</h3><ul><li>Calendar holds and reminders</li><li>Meeting prep and recaps</li><li>Tracking tasks and owners</li></ul></div>
+    <div class="glass step rv" style="--d:.1s"><div class="lv">LEVEL 2 · DO AND TELL</div><h3>Act, then report</h3><ul><li>Reschedule low-risk meetings</li><li>Draft replies for review</li><li>Chase team updates</li></ul></div>
+    <div class="glass step rv" style="--d:.2s"><div class="lv">LEVEL 3 · ASK FIRST</div><h3>Josh decides</h3><ul><li>Anything external in his name</li><li>Priorities and commitments</li><li>Client or financial data decisions</li></ul></div>
   </div>
 </section>
 
 <section id="plan">
-  <div class="kicker">First 90 days</div>
-  <h2>How I would earn Josh's trust</h2>
-  <p class="lead">A proposal, to be adjusted together with Josh and the people closest to him.</p>
-  <div class="days" style="color:#fff;background:var(--navy);border-radius:16px;padding:28px">
-    <div class="day"><h3>Days 1–30 · Listen</h3><ul><li>Learn Josh's rhythm, priorities and preferences</li><li>Map calendar, inbox and open loops</li><li>Document what I learn as first SOPs</li></ul></div>
-    <div class="day"><h3>Days 31–60 · Anticipate</h3><ul><li>Prepare agendas and files before each meeting</li><li>Weekly project status in one page</li><li>Inbox with a recommendation attached</li></ul></div>
-    <div class="day"><h3>Days 61–90 · Multiply</h3><ul><li>Standardized, documented routines</li><li>Cross-area follow-up running on its own</li><li>Josh frees up time for growth</li></ul></div>
+  <div class="kicker rv">Chapter 5 · The first 90 days</div>
+  <h2 class="rv">How I would earn Josh's trust</h2>
+  <p class="lead rv">A proposal to adjust together with Josh and the people closest to him.</p>
+  <div class="grid g3">
+    <div class="glass card rv"><h3>Before day 1 · Ready</h3><p>Tool-readiness sprint: Slack, ClickUp, Loom, Missive, Granola. Signed confidentiality terms. Access agreed with Josh.</p></div>
+    <div class="glass card rv" style="--d:.08s"><h3>Days 1–30 · Listen</h3><p>Learn Josh's rhythm. Map calendar, inbox and open loops. First SOPs. Meet each person in his circle. 30-day feedback round.</p></div>
+    <div class="glass card rv" style="--d:.16s"><h3>Days 31–90 · Anticipate</h3><p>Agendas and files ready before each meeting. One-page project status. Inbox with a recommendation attached. 90-day review of the autonomy ladder.</p></div>
   </div>
-  <div style="height:40px"></div>
-  <div class="why">
-    <h2>Why this is my "extra factor"</h2>
-    <p>I bring the judgment of someone who has run an operation and the discipline of someone who closes every loop. For Josh that means a partner who can be trusted with his time, his information and his priorities, and who makes the whole team move faster.</p>
+  <div class="glass why rv" style="margin-top:60px">
+    <h2>The extra factor is not talent. It is reliability.</h2>
+    <p>I bring the judgment of someone who has run an operation, and the humility to put it at Josh's service. If a concern comes up, I would rather answer it at the table than have it travel without me.</p>
+    <a class="btn" href="#risks">Ask me the hard question →</a>
   </div>
 </section>
 
-<footer>
-  <b>Cristian González</b> · Bogotá, Colombia · Cristhian.gonzalez2013@gmail.com · +57 319 235 0933 · linkedin.com/in/cristian-gonzalez-94bbab174
-</footer>
+<footer><b>Cristian González</b> · Bogotá, Colombia · Cristhian.gonzalez2013@gmail.com · +57 319 235 0933 · linkedin.com/in/cristian-gonzalez-94bbab174</footer>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  var bar=document.getElementById('bar'),orbs=document.querySelectorAll('.orb'),tick=false;
+  function upd(){var y=window.scrollY,h=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?y/h:0)+')';
+    orbs.forEach(function(o){o.style.transform='translate3d(0,'+(y*parseFloat(o.dataset.s))+'px,0)'});tick=false}
+  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd();
+  // count-up
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,t=+el.dataset.n,s=performance.now();
+    (function f(n){var p=Math.min((n-s)/1400,1),v=Math.round(t*(1-Math.pow(1-p,3)));el.textContent=v;if(p<1)requestAnimationFrame(f)})(s);co.unobserve(el)})},{threshold:.6});
+  document.querySelectorAll('[data-n]').forEach(function(el){co.observe(el)});
+})();
+</script>
 </body>
 </html>
