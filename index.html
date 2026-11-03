@@ -98,6 +98,9 @@
   .step ul{margin:10px 0 0 18px;font-size:15px;color:#4a4163}
   .step li{margin-bottom:5px}
 
+  .loop{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  .loop span{padding:10px 16px;border-radius:99px;background:var(--p100);border:1px solid var(--p200);font-size:14px;font-weight:700;color:var(--p800)}
+  .loop b{color:var(--p500);font-size:18px}
   .why{padding:54px;text-align:center;background:linear-gradient(135deg,rgba(109,58,224,.92),rgba(139,92,246,.82));color:#fff;border:1px solid rgba(255,255,255,.4)}
   .why h2{color:#fff}.why p{font-size:19px;max-width:760px;margin:auto;color:#EFE9FF}
   .why .btn{background:#fff;color:var(--p700);box-shadow:0 12px 30px rgba(0,0,0,.2)}
@@ -244,12 +247,22 @@
 <section id="plan">
   <div class="kicker rv">Chapter 5 · First 90 days</div>
   <h2 class="rv">What I would focus on once I join</h2>
-  <p class="lead rv">A starting point, to be adjusted together with Josh and the team.</p>
-  <div class="grid g3">
-    <div class="glass card rv"><h3>Before day 1 · Prepare</h3><p>Get comfortable with the team's tools (ClickUp, Loom, Missive, Granola) and agree on access and confidentiality.</p></div>
-    <div class="glass card rv" style="--d:.08s"><h3>Days 1–30 · Listen and learn</h3><p>Understand Josh's rhythm and priorities, map the calendar and open items, meet the people he works with and write the first SOPs.</p></div>
-    <div class="glass card rv" style="--d:.16s"><h3>Days 31–90 · Consolidate</h3><p>Agendas and files ready ahead of meetings, a one-page project view, inbox summaries with a suggested next step, and a review with Josh at day 90.</p></div>
+  <p class="lead rv">Learn first, then run the rhythm, then anticipate. A starting point, to be adjusted together with Josh and the team.</p>
+  <div class="glass card rv" style="margin-bottom:20px"><h3>Before day 1 · Prepare</h3><p>Get comfortable with the team's tools (ClickUp, Loom, Missive, Granola), agree on access and confidentiality, and ask Josh for the three things he would want me to know before my first meeting.</p></div>
+  <div class="ladder">
+    <div class="glass step rv"><div class="lv">DAYS 1–30 · LEARN AND LISTEN</div><h3>Understand how Josh works</h3>
+      <ul><li>Get full visibility of the calendar and build a rolling three-week view</li><li>Ask Josh and the people around him how they like updates, and what to handle versus escalate</li><li>Map how ClickUp, Slack and SharePoint are used today, without changing anything yet</li><li>Start a risk log and write the first SOPs after new tasks</li></ul>
+      <div class="verify">Day-30 check: Josh confirms the weekly rhythm and nothing important reaches him cold.</div></div>
+    <div class="glass step rv" style="--d:.1s"><div class="lv">DAYS 31–60 · RUN THE RHYTHM</div><h3>Close the loop, every day</h3>
+      <ul><li>Agenda and client files ready before each meeting</li><li>Recap in the client Slack channel and tasks in ClickUp, each with an owner and due date, the same day</li><li>Daily Missive review: urgent items flagged, each with a recommendation</li><li>Weekly priorities tracker and the 18-hour follow-up on quiet items</li></ul>
+      <div class="verify">Day-60 check: every action item has an owner and a date, and Josh reviews a short list instead of the full inbox.</div></div>
+    <div class="glass step rv" style="--d:.2s"><div class="lv">DAYS 61–90 · ANTICIPATE AND IMPROVE</div><h3>Show the patterns, not just the status</h3>
+      <ul><li>A weekly snapshot from ClickUp: overdue items, items aging, blockers by person or client</li><li>A risk view with a recommendation attached to each item before it reaches Josh</li><li>SOPs organized in SharePoint, with a standard recap and task template</li><li>Two or three automation proposals for Josh to approve</li></ul>
+      <div class="verify">Day-90 check: a review with Josh on what worked, and which tasks to hand over next.</div></div>
   </div>
+  <h2 class="rv" style="margin-top:70px">One place for follow-up</h2>
+  <p class="lead rv">Slack is where conversations happen and ClickUp is where commitments live. My job is to keep the two connected, so nothing agreed in a meeting depends on someone's memory.</p>
+  <div class="glass card rv"><div class="loop"><span>Meeting</span><b>→</b><span>Recap in Slack</span><b>→</b><span>Task in ClickUp: owner + due date</span><b>→</b><span>18-hour check on quiet items</span><b>→</b><span>Confirmed done, back in Slack</span></div></div>
   <div class="glass why rv" style="margin-top:60px">
     <h2>Trust, kept one commitment at a time.</h2>
     <p>I care about doing what I say I will do, and about people feeling they can count on me. I would be glad to put that at the service of Josh and the team.</p>
